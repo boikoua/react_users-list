@@ -3,10 +3,13 @@ import { UserType } from '../../types/UserType';
 import style from './User.module.scss';
 
 type Props = {
+  id: number;
   user: UserType;
+  inviteUser: (userId: number) => void;
+  invites: number[];
 };
 
-const User: React.FC<Props> = ({ user }) => {
+const User: React.FC<Props> = ({ id, user, inviteUser, invites }) => {
   return (
     <li>
       <div>
@@ -23,7 +26,12 @@ const User: React.FC<Props> = ({ user }) => {
           </p>
         </div>
       </div>
-      <img className={style.action} src="/assets/plus.svg" alt="Action" />
+      <img
+        className={style.action}
+        src={`/assets/${invites.includes(id) ? 'minus' : 'plus'}.svg`}
+        alt="Action"
+        onClick={() => inviteUser(id)}
+      />
     </li>
   );
 };
