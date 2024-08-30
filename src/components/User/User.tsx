@@ -28,7 +28,7 @@ const User: React.FC<Props> = ({ id, user, inviteUser, invites }) => {
       </div>
       <img
         className={style.action}
-        src={`/assets/${invites.includes(id) ? 'minus' : 'plus'}.svg`}
+        src={`./assets/${invites.includes(id) ? 'minus' : 'plus'}.svg`}
         alt="Action"
         onClick={() => inviteUser(id)}
       />

@@ -7,7 +7,7 @@ type Props = {
 const Success: React.FC<Props> = ({ inviteUsers }) => {
   return (
     <div className={style.successBlock}>
-      <img src="/assets/success.svg" alt="Success" />
+      <img src="./assets/success.svg" alt="Success" />
       <h3>Успешно!</h3>
       <p>
         {' '}
